@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recon Tweaks - Preparing for installation...</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+    <style>
+        body {
+            margin: 0;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: #1e1e2f;
+            color: #ffffff;
+            font-family: 'Roboto', sans-serif;
+            animation: fadeIn 1s ease-in-out;
+        }
+
+        .loading-container {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            animation: slideUp 1s ease-in-out;
+        }
+
+        .spinner {
+            width: 60px;
+            height: 60px;
+            border: 6px solid rgba(149, 99, 233, 0.2);
+            border-top: 6px solid #9563e9;
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+            margin-bottom: 30px; /* Increased spacing */
+        }
+
+        .loading-text {
+            font-size: 1.2em;
+            font-weight: 500;
+            margin-bottom: 15px; /* Increased spacing */
+        }
+
+        .loading-subtext {
+            font-size: 0.9em;
+            color: #aaaaaa;
+            margin-bottom: 30px; /* Increased spacing */
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        @keyframes fadeIn {
+            0% { opacity: 0; }
+            100% { opacity: 1; }
+        }
+
+        @keyframes slideUp {
+            0% { transform: translateY(20px); opacity: 0; }
+            100% { transform: translateY(0); opacity: 1; }
+        }
+    </style>
+</head>
+<body>
+    <div class="loading-container">
+        <div class="spinner"></div>
+        <div class="loading-text">Please wait...</div>
+        <div class="loading-subtext">We are preparing for installation...</div>
+    </div>
+
+    <script>
+        setTimeout(function() {
+            window.location.href = "download.html";
+        }, 6000);
+    </script>
+</body>
+</html>

